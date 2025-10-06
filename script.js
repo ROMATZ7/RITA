@@ -40,7 +40,7 @@ boopBtn.addEventListener("click", () => {
 	const isOnNose = Math.abs(pointerX - currentNoseX) <= tolerance;
 
 	if (isOnNose) {
-		result.textContent = "Boop! You're a human";
+		result.textContent = "Boop! You're GERMAN";
 	} else {
 		result.textContent = "Nice try, bot.";
 	}
