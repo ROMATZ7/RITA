@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+:root {
+	--clr-bg: #000000;         /* fondo negro absoluto */
+	--clr-dark: #00f0ff;       /* cian neón */
+	--clr-mid: #ff00ff;        /* magenta neón */
+	--clr-light: #7d00ff;      /* violeta eléctrico */
+	--clr-extra-light: #ff007f; /* rosa intenso */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--clr-bg);
+	color: var(--clr-dark);
+	font-family: "Fredoka", sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	margin: 0;
+	justify-content: center;
+}
+
+h1 {
+	font-weight: 600;
+	font-size: 2.5rem;
+	margin: 0.25rem;
+	text-align: center;
+}
+
+p {
+	font-weight: 300;
+	font-size: 1.5rem;
+	margin: 0.25rem;
+}
+
+.container {
+	position: relative;
+	margin: 1rem;
+	width: 20rem;
+	max-width: 90vw;
+	border-radius: 2rem;
+	border: 2px solid var(--clr-dark);
+	box-shadow: 0 3px 0 -1px var(--clr-mid);
+}
+
+img#dogImage {
+	width: 100%;
+	display: block;
+	border-radius: 2rem;
+	user-select: none;
+	pointer-events: none;
+}
+
+#pointer {
+	position: absolute;
+	top: 17rem;
+	left: 0;
+	font-size: 2rem;
+	color: var(--clr-dark);
+	user-select: none;
+	transition: color 0.2s ease;
+	pointer-events: none;
+}
+
+input[type="range"] {
+	margin: 1.5rem 0;
+	width: 20rem;
+	max-width: 90vw;
+	-webkit-appearance: none;
+	background: var(--clr-dark);
+	height: 0.75rem;
+	border-radius: 0.375rem;
+	cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: var(--clr-dark);
+	cursor: pointer;
+	border-radius: 50%;
+	border: 2px solid var(--clr-bg);
+	box-shadow: 0 3px 0 -1px var(--clr-mid);
+	margin-top: -0.2rem;
+	transition: background-color 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb {
+	width: 1.5rem;
+	height: 1.5rem;
+	background: var(--clr-dark);
+	cursor: pointer;
+	border-radius: 50%;
+	border: 2px solid var(--clr-bg);
+	box-shadow: 0 3px 0 -1px var(--clr-mid);
+	transition: background-color 0.2s ease;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+	background-color: var(--clr-extra-light);
+}
+
+button {
+	background-color: var(--clr-dark);
+	color: var(--clr-bg);
+	border: none;
+	padding: 0.75rem 1.5rem;
+	font-weight: 100;
+	font-family: "Fredoka", sans-serif;
+	font-size: 1rem;
+	border-radius: 10rem;
+	border: 2px solid var(--clr-bg);
+	box-shadow: 0 3px 0 -1px var(--clr-mid);
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	user-select: none;
+	margin-bottom: 1rem;
+}
+
+button:disabled {
+	background-color: var(--clr-bg);
+	color: var(--clr-light);
+	border: 2px solid var(--clr-light);
+	cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+	background-color: var(--clr-dark);
+	color: var(--clr-bg);
+	border: 2px solid var(--clr-bg);
+	box-shadow: 0 2px 0 -1px var(--clr-mid);
+}
+
+.hidden {
+	display: none;
+}
+
+#result {
+	font-size: 2rem;
+	margin-top: 0.5rem;
+	min-height: 1.5rem;
+	text-align: center;
+	font-weight: 600;
+	user-select: none;
+	color: var(--clr-dark);
+}
+
+#boopBtn.animate {
+	animation: boopAnim 0.3s ease forwards;
+}
+
+@keyframes boopAnim {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@media (max-width: 400px) {
+	#pointer {
+		font-size: 1.5rem;
+		top: 12rem;
+	}
+
+	button {
+		font-size: 0.875rem;
+		padding: 0.5rem 1rem;
+	}
+}
+
+body, h1, p, #result, #pointer {
+	text-shadow: 0 0 5px var(--clr-dark), 0 0 10px var(--clr-dark), 0 0 20px var(--clr-light);
+}
+
+.container {
+	box-shadow: 0 0 10px var(--clr-mid), 0 0 20px var(--clr-light);
+	border: 2px solid var(--clr-extra-light);
+}
+
+button:not(:disabled) {
+	box-shadow: 0 0 5px var(--clr-dark), 0 0 10px var(--clr-light);
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+	box-shadow: 0 0 6px var(--clr-extra-light);
+	border-color: var(--clr-mid);
+	background: var(--clr-extra-light);
+}
+
+input[type="range"] {
+	background: var(--clr-light);
+	box-shadow: 0 0 5px var(--clr-light);
+}
